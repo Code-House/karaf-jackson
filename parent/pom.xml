@@ -23,7 +23,9 @@
 
         <pax-exam.version>4.5.0</pax-exam.version>
 
+        <geronimo-annotation-spec.version>1.0</geronimo-annotation-spec.version>
         <geronimo-atinject-spec.version>1.0</geronimo-atinject-spec.version>
+        <servicemix-jaxrs-spec.version>2.4.0</servicemix-jaxrs-spec.version>
 
         <servicemix-depends-plugin.version>1.2</servicemix-depends-plugin.version>
     </properties>
@@ -80,8 +82,18 @@
 
             <dependency>
                 <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-annotation_1.2_spec</artifactId>
+                <version>${geronimo-annotation-spec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
                 <artifactId>geronimo-atinject_1.0_spec</artifactId>
                 <version>${geronimo-atinject-spec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.servicemix.specs</groupId>
+                <artifactId>org.apache.servicemix.specs.jsr339-api-2.0</artifactId>
+                <version>${servicemix-jaxrs-spec.version}</version>
             </dependency>
 
             <dependency>

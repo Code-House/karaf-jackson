@@ -70,6 +70,13 @@ public class FeaturesIntegrationTest {
         assertFeatureInstalled("jackson-dataformat-yaml");
     }
 
+    @Test
+    public void testInstallJacksonJaxrsJson() throws Exception {
+        features.installFeature("jackson-jaxrs-json-provider", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-jaxrs-json-provider");
+    }
+
     private void assertFeatureInstalled(String name) throws Exception {
         assertTrue("Feature " + name + " should be installed", features.isInstalled(features.getFeature(name)));
     }
