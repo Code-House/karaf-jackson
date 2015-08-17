@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="jackson-${project.version}"
+    xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://karaf.apache.org/xmlns/features/v1.0.0
+        http://karaf.apache.org/xmlns/features/v1.0.0
+    ">
+
+    <feature name="jackson-annotations" version="${jackson.version}">
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}</bundle>
+    </feature>
+
+    <feature name="jackson-core" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-annotations</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}</bundle>
+    </feature>
+
+    <feature name="jackson-databind" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-core</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}</bundle>
+    </feature>
+
+
+</features>
