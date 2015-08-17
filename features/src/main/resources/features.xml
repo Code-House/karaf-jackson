@@ -23,5 +23,11 @@
         <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-dataformat-yaml" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-core</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson.version}</bundle>
+    </feature>
+
 
 </features>

@@ -63,6 +63,13 @@ public class FeaturesIntegrationTest {
         assertFeatureInstalled("jackson-databind");
     }
 
+    @Test
+    public void testInstallJacksonDataformatYaml() throws Exception {
+        features.installFeature("jackson-dataformat-yaml", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-dataformat-yaml");
+    }
+
     private void assertFeatureInstalled(String name) throws Exception {
         assertTrue("Feature " + name + " should be installed", features.isInstalled(features.getFeature(name)));
     }
