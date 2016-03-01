@@ -43,5 +43,12 @@
         <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-jaxrs-yaml-provider" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-jaxrs-base</feature>
+        <feature version="${jackson.version}">jackson-dataformat-yaml</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-yaml-provider/${jackson.version}</bundle>
+    </feature>
+
 
 </features>

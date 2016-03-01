@@ -77,6 +77,13 @@ public class FeaturesIntegrationTest {
         assertFeatureInstalled("jackson-jaxrs-json-provider");
     }
 
+    @Test
+    public void testInstallJacksonJaxrsYaml() throws Exception {
+        features.installFeature("jackson-jaxrs-yaml-provider", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-jaxrs-yaml-provider");
+    }
+
     private void assertFeatureInstalled(String name) throws Exception {
         assertTrue("Feature " + name + " should be installed", features.isInstalled(features.getFeature(name)));
     }
