@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.code-house</groupId>
         <artifactId>jackson</artifactId>
-        <version>3.0.0-SNAPSHOT</version>
+        <version>4.0.0-SNAPSHOT</version>
     </parent>
 
     <groupId>org.code-house.jackson</groupId>
@@ -17,17 +17,22 @@
     <description>Jackson integration parent</description>
 
     <properties>
-        <karaf.version>4.0.4</karaf.version>
-        <cxf.version>3.1.5</cxf.version>
+        <karaf.version>4.0.5</karaf.version>
         <jackson.version>2.6.5</jackson.version>
 
-        <pax-exam.version>4.5.0</pax-exam.version>
+        <pax-exam.version>4.9.1</pax-exam.version>
 
+        <codehaus-stax.version>3.1.4</codehaus-stax.version>
         <geronimo-annotation-spec.version>1.0</geronimo-annotation-spec.version>
         <geronimo-atinject-spec.version>1.0</geronimo-atinject-spec.version>
-        <servicemix-jaxrs-spec.version>2.4.0</servicemix-jaxrs-spec.version>
+        <jaxrs-spec.version>2.0.1</jaxrs-spec.version>
 
         <servicemix-depends-plugin.version>1.2</servicemix-depends-plugin.version>
+
+        <!-- Build env -->
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencyManagement>
@@ -40,6 +45,9 @@
                 <type>xml</type>
             </dependency>
 
+            <!-- Jackson related dependencies -->
+
+            <!-- core -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
@@ -56,11 +64,88 @@
                 <version>${jackson.version}</version>
             </dependency>
 
+            <!-- modules -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-jaxb-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- dataformat -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-avro</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-cbor</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-csv</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-smile</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-yaml</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
+
+            <!-- jaxrs -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-base</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-cbor-provider</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-json-provider</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-smile-provider</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-xml-provider</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-yaml-provider</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Karaf dependencies -->
 
             <dependency>
                 <groupId>org.apache.karaf.features</groupId>
@@ -91,9 +176,9 @@
                 <version>${geronimo-atinject-spec.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.servicemix.specs</groupId>
-                <artifactId>org.apache.servicemix.specs.jsr339-api-2.0</artifactId>
-                <version>${servicemix-jaxrs-spec.version}</version>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>javax.ws.rs-api</artifactId>
+                <version>${jaxrs-spec.version}</version>
             </dependency>
 
             <dependency>

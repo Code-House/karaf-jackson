@@ -3,9 +3,11 @@
     xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-        http://karaf.apache.org/xmlns/features/v1.0.0
-        http://karaf.apache.org/xmlns/features/v1.0.0
+        http://karaf.apache.org/xmlns/features/v1.2.1
+        http://karaf.apache.org/xmlns/features/v1.2.1
     ">
+
+    <!-- core -->
 
     <feature name="jackson-annotations" version="${jackson.version}">
         <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}</bundle>
@@ -23,15 +25,52 @@
         <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}</bundle>
     </feature>
 
+    <!-- modules -->
+
+    <feature name="jackson-module-jaxb-annotations" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/${jackson.version}</bundle>
+    </feature>
+
+    <!-- dataformat -->
+    <feature name="jackson-dataformat-csv" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-csv/${jackson.version}</bundle>
+    </feature>
+
+    <feature name="jackson-dataformat-cbor" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-cbor/${jackson.version}</bundle>
+    </feature>
+
     <feature name="jackson-dataformat-yaml" version="${jackson.version}">
-        <feature version="${jackson.version}">jackson-core</feature>
+        <feature version="${jackson.version}">jackson-databind</feature>
 
         <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-dataformat-xml" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+        <feature version="${jackson.version}">jackson-module-jaxb-annotations</feature>
+
+        <bundle dependency="true">mvn:org.codehaus.woodstox/stax2-api/${codehaus-stax.version}</bundle>
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-xml/${jackson.version}</bundle>
+    </feature>
+
+    <feature name="jackson-dataformat-smile" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-smile/${jackson.version}</bundle>
+    </feature>
+
+    <!-- jaxrs -->
+
     <feature name="jackson-jaxrs-base" version="${jackson.version}">
         <feature version="${jackson.version}">jackson-databind</feature>
-        <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr339-api-2.0/${servicemix-jaxrs-spec.version}</bundle>
+        <bundle dependency="true">mvn:javax.ws.rs/javax.ws.rs-api/${jaxrs-spec.version}</bundle>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-annotation_1.2_spec/${geronimo-annotation-spec.version}</bundle>
 
         <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson.version}</bundle>
@@ -41,6 +80,27 @@
         <feature version="${jackson.version}">jackson-jaxrs-base</feature>
 
         <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson.version}</bundle>
+    </feature>
+
+    <feature name="jackson-jaxrs-cbor-provider" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-jaxrs-base</feature>
+        <feature version="${jackson.version}">jackson-dataformat-cbor</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-cbor-provider/${jackson.version}</bundle>
+    </feature>
+
+    <feature name="jackson-jaxrs-smile-provider" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-jaxrs-base</feature>
+        <feature version="${jackson.version}">jackson-dataformat-smile</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-smile-provider/${jackson.version}</bundle>
+    </feature>
+
+    <feature name="jackson-jaxrs-xml-provider" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-jaxrs-base</feature>
+        <feature version="${jackson.version}">jackson-dataformat-xml</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-xml-provider/${jackson.version}</bundle>
     </feature>
 
     <feature name="jackson-jaxrs-yaml-provider" version="${jackson.version}">
