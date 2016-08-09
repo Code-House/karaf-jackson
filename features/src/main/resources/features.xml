@@ -106,6 +106,12 @@
         <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-jdk8/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-datatype-jsr310" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${jackson.version}</bundle>
+    </feature>
+
     <!-- jaxrs -->
 
     <feature name="jackson-jaxrs-base" version="${jackson.version}">
