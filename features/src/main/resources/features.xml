@@ -64,6 +64,13 @@
         <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-dataformat-protobuf" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle dependency="true">wrap:mvn:com.squareup/protoparser/4.0.0</bundle>
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-protobuf/${jackson.version}</bundle>
+    </feature>
+
     <feature name="jackson-dataformat-xml" version="${jackson.version}">
         <feature version="${jackson.version}">jackson-databind</feature>
         <feature version="${jackson.version}">jackson-module-jaxb-annotations</feature>

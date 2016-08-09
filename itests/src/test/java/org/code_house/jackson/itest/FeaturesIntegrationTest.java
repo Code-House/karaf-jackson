@@ -100,6 +100,13 @@ public class FeaturesIntegrationTest {
     }
 
     @Test
+    public void testInstallJacksonDataformatProtobuf() throws Exception {
+        features.installFeature("jackson-dataformat-protobuf", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-dataformat-protobuf");
+    }
+
+    @Test
     public void testInstallJacksonDataformatSmile() throws Exception {
         features.installFeature("jackson-dataformat-smile", INSTALL_OPTIONS);
 
