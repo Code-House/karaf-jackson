@@ -100,6 +100,12 @@
         <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-guava/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-datatype-jdk8" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-jdk8/${jackson.version}</bundle>
+    </feature>
+
     <!-- jaxrs -->
 
     <feature name="jackson-jaxrs-base" version="${jackson.version}">

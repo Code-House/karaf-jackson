@@ -136,6 +136,13 @@ public class FeaturesIntegrationTest {
         assertFeatureInstalled("jackson-datatype-guava");
     }
 
+    @Test
+    public void testInstallJacksonDatatypeJdk8() throws Exception {
+        features.installFeature("jackson-datatype-jdk8", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-datatype-jdk8");
+    }
+
     // jaxrs
 
     @Test
