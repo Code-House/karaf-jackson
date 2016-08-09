@@ -85,6 +85,14 @@
         <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-smile/${jackson.version}</bundle>
     </feature>
 
+    <!-- data type -->
+    <feature name="jackson-datatype-joda" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle dependency="true">mvn:joda-time/joda-time/2.4</bundle>
+        <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-joda/${jackson.version}</bundle>
+    </feature>
+
     <!-- jaxrs -->
 
     <feature name="jackson-jaxrs-base" version="${jackson.version}">

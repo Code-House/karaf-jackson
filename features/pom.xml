@@ -36,6 +36,12 @@
             <artifactId>jackson-module-jaxb-annotations</artifactId>
         </dependency>
 
+        <!-- datatype -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+        </dependency>
+
         <!-- dataformat -->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>

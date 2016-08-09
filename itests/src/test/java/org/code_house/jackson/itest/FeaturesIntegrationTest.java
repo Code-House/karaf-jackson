@@ -120,6 +120,17 @@ public class FeaturesIntegrationTest {
         assertFeatureInstalled("jackson-dataformat-xml");
     }
 
+    // datatype
+
+    @Test
+    public void testInstallJacksonDatatypeJoda() throws Exception {
+        features.installFeature("jackson-datatype-joda", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-datatype-joda");
+    }
+
+    // jaxrs
+
     @Test
     public void testInstallJacksonJaxrsCbor() throws Exception {
         features.installFeature("jackson-jaxrs-cbor-provider", INSTALL_OPTIONS);

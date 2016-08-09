@@ -109,6 +109,13 @@
                 <version>${jackson.version}</version>
             </dependency>
 
+            <!-- datatype -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-joda</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
             <!-- jaxrs -->
             <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
