@@ -93,6 +93,13 @@
         <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-joda/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-datatype-guava" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle dependency="true">mvn:com.google.guava/guava/16.0</bundle>
+        <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-guava/${jackson.version}</bundle>
+    </feature>
+
     <!-- jaxrs -->
 
     <feature name="jackson-jaxrs-base" version="${jackson.version}">

@@ -129,6 +129,13 @@ public class FeaturesIntegrationTest {
         assertFeatureInstalled("jackson-datatype-joda");
     }
 
+    @Test
+    public void testInstallJacksonDatatypeGuava() throws Exception {
+        features.installFeature("jackson-datatype-guava", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-datatype-guava");
+    }
+
     // jaxrs
 
     @Test
