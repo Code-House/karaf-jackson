@@ -72,6 +72,13 @@ public class FeaturesIntegrationTest {
     }
 
     @Test
+    public void testInstallJacksonDataformatAvro() throws Exception {
+        features.installFeature("jackson-dataformat-avro", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-dataformat-avro");
+    }
+
+    @Test
     public void testInstallJacksonDataformatCsv() throws Exception {
         features.installFeature("jackson-dataformat-csv", INSTALL_OPTIONS);
 

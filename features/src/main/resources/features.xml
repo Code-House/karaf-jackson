@@ -34,6 +34,18 @@
     </feature>
 
     <!-- dataformat -->
+    <feature name="jackson-dataformat-avro" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle dependency="true">wrap:mvn:org.tukaani/xz/1.0</bundle>
+        <bundle dependency="true">mvn:org.apache.commons/commons-compress/1.4.1</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.paranamer/2.3_1</bundle>
+        <bundle dependency="true">mvn:org.codehaus.jackson/jackson-core-asl/1.9.13</bundle>
+        <bundle dependency="true">mvn:org.codehaus.jackson/jackson-mapper-asl/1.9.13</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.avro/1.7.7_2</bundle>
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-avro/${jackson.version}</bundle>
+    </feature>
+
     <feature name="jackson-dataformat-csv" version="${jackson.version}">
         <feature version="${jackson.version}">jackson-databind</feature>
 

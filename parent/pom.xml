@@ -166,6 +166,8 @@
                 <type>tar.gz</type>
             </dependency>
 
+
+            <!-- Jaxrs stuff -->
             <dependency>
                 <groupId>org.apache.geronimo.specs</groupId>
                 <artifactId>geronimo-annotation_1.2_spec</artifactId>
@@ -182,15 +184,18 @@
                 <version>${jaxrs-spec.version}</version>
             </dependency>
 
+            <!-- Testing -->
             <dependency>
                 <groupId>org.ops4j.pax.exam</groupId>
                 <artifactId>pax-exam-junit4</artifactId>
                 <version>${pax-exam.version}</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.ops4j.pax.exam</groupId>
                 <artifactId>pax-exam-container-karaf</artifactId>
                 <version>${pax-exam.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
