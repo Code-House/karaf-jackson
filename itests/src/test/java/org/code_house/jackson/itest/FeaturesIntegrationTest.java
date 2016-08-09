@@ -114,6 +114,13 @@ public class FeaturesIntegrationTest {
     }
 
     @Test
+    public void testInstallJacksonDataformatProperties() throws Exception {
+        features.installFeature("jackson-dataformat-properties", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-dataformat-properties");
+    }
+
+    @Test
     public void testInstallJacksonDataformatXml() throws Exception {
         features.installFeature("jackson-dataformat-xml", INSTALL_OPTIONS);
 

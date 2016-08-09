@@ -85,6 +85,12 @@
         <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-smile/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-dataformat-properties" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-properties/${jackson.version}</bundle>
+    </feature>
+
     <!-- data type -->
     <feature name="jackson-datatype-joda" version="${jackson.version}">
         <feature version="${jackson.version}">jackson-databind</feature>
