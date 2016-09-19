@@ -12,7 +12,7 @@ Feature descriptor uses Karaf Features schema v1.2.1 which is compatible with bo
 
 Provides
 ---
-Jackson features for running it inside karaf.
+Jackson features for running it inside karaf. With support for datatypes and dataformats.
 
 ## Developer introduction
 
