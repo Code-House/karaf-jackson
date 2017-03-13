@@ -157,6 +157,13 @@ public class FeaturesIntegrationTest {
         assertFeatureInstalled("jackson-datatype-jsr310");
     }
 
+    @Test
+    public void testInstallJacksonDatatypeJaxrs() throws Exception {
+        features.installFeature("jackson-datatype-jaxrs", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-datatype-jaxrs");
+    }
+
     // jaxrs
 
     @Test

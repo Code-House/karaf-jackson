@@ -61,6 +61,7 @@
     <feature name="jackson-dataformat-yaml" version="${jackson.version}">
         <feature version="${jackson.version}">jackson-databind</feature>
 
+        <bundle>mvn:org.yaml/snakeyaml/1.15</bundle>
         <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson.version}</bundle>
     </feature>
 
@@ -95,7 +96,7 @@
     <feature name="jackson-datatype-joda" version="${jackson.version}">
         <feature version="${jackson.version}">jackson-databind</feature>
 
-        <bundle dependency="true">mvn:joda-time/joda-time/2.4</bundle>
+        <bundle dependency="true">mvn:joda-time/joda-time/2.7</bundle>
         <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-joda/${jackson.version}</bundle>
     </feature>
 
@@ -116,6 +117,12 @@
         <feature version="${jackson.version}">jackson-databind</feature>
 
         <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${jackson.version}</bundle>
+    </feature>
+
+    <feature name="jackson-datatype-jaxrs" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-jaxrs/${jackson.version}</bundle>
     </feature>
 
     <!-- jaxrs -->
