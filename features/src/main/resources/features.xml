@@ -126,20 +126,20 @@
     </feature>
 
     <feature name="jackson-datatype-jaxrs" version="${jackson.version}">
-        <feature version="${jaxrs-spec.version}">jaxrs-api</feature>
+        <feature version="${jaxrs-spec.version}">jaxrs-spec</feature>
         <feature version="${jackson.version}">jackson-databind</feature>
 
         <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-jaxrs/${jackson.version}</bundle>
     </feature>
 
     <!-- jaxrs -->
-    <feature name="jaxrs-api" version="${jaxrs-spec.version}">
+    <feature name="jaxrs-spec" version="${jaxrs-spec.version}">
         <bundle dependency="true" start-level="10">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr339-api-${jaxrs-spec.version}/2.6.0</bundle>
     </feature>
 
     <feature name="jackson-jaxrs-base" version="${jackson.version}">
         <feature version="${jackson.version}">jackson-databind</feature>
-        <feature version="${jaxrs-spec.version}">jaxrs-api</feature>
+        <feature version="${jaxrs-spec.version}">jaxrs-spec</feature>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-annotation_1.2_spec/${geronimo-annotation-spec.version}</bundle>
 
         <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson.version}</bundle>
