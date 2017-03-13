@@ -25,6 +25,7 @@ import java.util.EnumSet;
 
 import javax.inject.Inject;
 
+import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -201,8 +202,20 @@ public class FeaturesIntegrationTest {
         assertFeatureInstalled("jackson-jaxrs-yaml-provider");
     }
 
+    // modules
+
+    @Test
+    public void testInstallJacksonModuleParametrNames() throws Exception {
+        features.installFeature("jackson-module-parameter-names", INSTALL_OPTIONS);
+
+        assertFeatureInstalled("jackson-module-parameter-names");
+    }
+
     private void assertFeatureInstalled(String name) throws Exception {
-        assertTrue("Feature " + name + " should be installed", features.isInstalled(features.getFeature(name)));
+        Feature feature = features.getFeature(name);
+        assertTrue("Feature " + name + " should be installed", features.isInstalled(feature));
+
+        features.uninstallFeature(name);
     }
 
 }

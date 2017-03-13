@@ -33,6 +33,12 @@
         <bundle>mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/${jackson.version}</bundle>
     </feature>
 
+    <feature name="jackson-module-parameter-names" version="${jackson.version}">
+        <feature version="${jackson.version}">jackson-databind</feature>
+
+        <bundle>mvn:com.fasterxml.jackson.module/jackson-module-parameter-names/${jackson.version}</bundle>
+    </feature>
+
     <!-- dataformat -->
     <feature name="jackson-dataformat-avro" version="${jackson.version}">
         <feature version="${jackson.version}">jackson-databind</feature>
