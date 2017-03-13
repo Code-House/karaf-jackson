@@ -28,8 +28,8 @@
         <connection>scm:git:git://github.com/Code-House/karaf-jackson.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/Code-House/karaf-jackson.git</developerConnection>
         <url>https://github.com/Code-House/karaf-jackson</url>
-      <tag>jackson-2.7.9</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <issueManagement>
         <system>github</system>
