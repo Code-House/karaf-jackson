@@ -134,7 +134,7 @@
 
     <!-- jaxrs -->
     <feature name="jaxrs-spec" version="${jaxrs-spec.version}">
-        <bundle dependency="true" start-level="10">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr339-api-${jaxrs-spec.version}/2.6.0</bundle>
+        <bundle dependency="true" start-level="10">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr339-api-${jaxrs-spec.version}/${servicemix-jaxrs-spec.version}</bundle>
     </feature>
 
     <feature name="jackson-jaxrs-base" version="${jackson.version}">

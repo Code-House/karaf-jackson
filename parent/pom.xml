@@ -28,6 +28,7 @@
         <jaxrs-spec.version>2.0.1</jaxrs-spec.version>
 
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <servicemix-jaxrs-spec.version>2.6.0</servicemix-jaxrs-spec.version>
         <servicemix-depends-plugin.version>1.2</servicemix-depends-plugin.version>
 
         <!-- Build env -->
@@ -212,9 +213,9 @@
                 <version>${geronimo-atinject-spec.version}</version>
             </dependency>
             <dependency>
-                <groupId>javax.ws.rs</groupId>
-                <artifactId>javax.ws.rs-api</artifactId>
-                <version>${jaxrs-spec.version}</version>
+                <groupId>org.apache.servicemix.specs</groupId>
+                <artifactId>org.apache.servicemix.specs.jsr339-api-2.0.1</artifactId>
+                <version>${servicemix-jaxrs-spec.version}</version>
             </dependency>
 
             <!-- Testing -->
