@@ -18,7 +18,7 @@
 
   <properties>
     <karaf.version>4.2.6</karaf.version>
-    <jackson.version>2.9.9</jackson.version>
+    <jackson.version>2.10.1</jackson.version>
 
     <pax-exam.version>4.13.1</pax-exam.version>
 
